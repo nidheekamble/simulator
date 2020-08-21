@@ -28,8 +28,11 @@ contract Location {
             msg.sender.transfer(msg.value-cost);    //transfer the remaining value for msg back to user, if any
             return "reachedLocation";
         }
-        else
-            return "deliveryPending";
+        else{
+             msg.sender.transfer(msg.value); 
+             return "deliveryPending";
+        }
+           
     }
 
 }
